@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gojo vs Sukuna Domain</title>
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: Arial;
+      overflow: hidden;
+    }
+
+    button {
+      padding: 15px 25px;
+      font-size: 18px;
+      margin: 10px;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    .domain {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      animation: expand 1.5s forwards;
+    }
+
+    .gojo {
+      background: radial-gradient(circle, #5e00ff, black);
+    }
+
+    .sukuna {
+      background: radial-gradient(circle, darkred, black);
+    }
+
+    @keyframes expand {
+      from { transform: scale(0); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+<button onclick="gojo()">Gojo Domain</button>
+<button onclick="sukuna()">Sukuna Domain</button>
+
+<script>
+  function gojo() {
+    clearDomain();
+    const d = document.createElement("div");
+    d.className = "domain gojo";
+    document.body.appendChild(d);
+  }
+
+  function sukuna() {
+    clearDomain();
+    const d = document.createElement("div");
+    d.className = "domain sukuna";
+    document.body.appendChild(d);
+  }
+
+  function clearDomain() {
+    document.querySelectorAll('.domain').forEach(e => e.remove());
+  }
+</script>
+
+</body>
+</html>
